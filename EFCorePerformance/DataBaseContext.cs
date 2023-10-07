@@ -6,10 +6,7 @@ namespace EFCorePerformance;
 public class DataBaseContext : DbContext
 {
     public DataBaseContext(DbContextOptions options)
-        : base(options)
-    {
-
-    }
+        : base(options) { }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
