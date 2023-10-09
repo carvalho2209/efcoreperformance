@@ -9,10 +9,8 @@
       "EFCorePerformance/1.0.0": {
         "dependencies": {
           "Dapper": "2.1.4",
-          "Microsoft.DotNet.ILCompiler": "8.0.0-rc.1.23419.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.11",
-          "Microsoft.EntityFrameworkCore.Tools": "7.0.11",
-          "Microsoft.NET.ILLink.Tasks": "8.0.0-rc.1.23419.4"
+          "Microsoft.EntityFrameworkCore.Tools": "7.0.11"
         },
         "runtime": {
           "EFCorePerformance.dll": {}
@@ -138,7 +136,6 @@
           }
         }
       },
-      "Microsoft.DotNet.ILCompiler/8.0.0-rc.1.23419.4": {},
       "Microsoft.EntityFrameworkCore/7.0.11": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Abstractions": "7.0.11",
@@ -351,7 +348,6 @@
           }
         }
       },
-      "Microsoft.NET.ILLink.Tasks/8.0.0-rc.1.23419.4": {},
       "Microsoft.NETCore.Platforms/1.1.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
       "Microsoft.SqlServer.Server/1.0.0": {
@@ -629,13 +625,6 @@
       "path": "microsoft.data.sqlclient.sni.runtime/5.1.0",
       "hashPath": "microsoft.data.sqlclient.sni.runtime.5.1.0.nupkg.sha512"
     },
-    "Microsoft.DotNet.ILCompiler/8.0.0-rc.1.23419.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-VXqkxiJ6SYfMCd4s8O0xlQfLjz9OQOG9KG+WSNj+B5WzHzwv3LRepfWwH+usfPpwSFpdknnOwSxRHMskglzYPg==",
-      "path": "microsoft.dotnet.ilcompiler/8.0.0-rc.1.23419.4",
-      "hashPath": "microsoft.dotnet.ilcompiler.8.0.0-rc.1.23419.4.nupkg.sha512"
-    },
     "Microsoft.EntityFrameworkCore/7.0.11": {
       "type": "package",
       "serviceable": true,
@@ -810,13 +799,6 @@
       "sha512": "sha512-ZPqHi86UYuqJXJ7bLnlEctHKkPKT4lGUFbotoCNiXNCSL02emYlcxzGYsRGWWmbFEcYDMi2dcTLLYNzHqWOTsw==",
       "path": "microsoft.identitymodel.tokens/6.24.0",
       "hashPath": "microsoft.identitymodel.tokens.6.24.0.nupkg.sha512"
-    },
-    "Microsoft.NET.ILLink.Tasks/8.0.0-rc.1.23419.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Te369WOsPH7E7PRtGi9/0+IRVD9BhmMQgVp4OmXVfDrna29E35bE08WKED0/15VwJ28vVd5+JbtKYZrwO3PXQg==",
-      "path": "microsoft.net.illink.tasks/8.0.0-rc.1.23419.4",
-      "hashPath": "microsoft.net.illink.tasks.8.0.0-rc.1.23419.4.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",

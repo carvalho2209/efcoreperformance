@@ -1,14 +1,31 @@
 using Dapper;
 using EFCorePerformance;
 using EFCorePerformance.Entities;
+using EFCorePerformance.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateSlimBuilder(args);
 
+builder.Services.ConfigureOptions<DatabaseOptionsSetup>();
+
 builder.Services.AddDbContext<DataBaseContext>(
-    x => x.UseSqlServer(
-        builder.Configuration.GetConnectionString("DefaultConnection")));
+    (serviceProvider, dbContextOptionsBuilder) =>
+    {
+        var databaseOptions = serviceProvider.GetService<IOptions<DatabaseOptions>>()!.Value;
+
+        dbContextOptionsBuilder.UseSqlServer(databaseOptions.ConnectionString, sqlServerAction =>
+        {
+            sqlServerAction.EnableRetryOnFailure(databaseOptions.MaxRetryCount);
+
+            sqlServerAction.CommandTimeout(databaseOptions.CommandTimeout);
+        });
+
+        dbContextOptionsBuilder.EnableDetailedErrors(databaseOptions.EnableDetailedErrors);
+
+        dbContextOptionsBuilder.EnableSensitiveDataLogging(databaseOptions.EnableSensitiveDataLogging);
+    });
 
 var app = builder.Build();
 
@@ -89,7 +106,5 @@ app.MapPut("increase-salaries-dapper", async (int companyId, DataBaseContext db)
 
     return Results.NoContent();
 });
-
-
 
 app.Run();
